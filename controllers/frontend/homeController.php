@@ -14,7 +14,8 @@
 			$a = $this->total_money_input();		
 			$b = $this->total_money_output();
 			$c = $a - $b;
-			$con_lai = strrev(chop(chunk_split(strrev($c),3,"."),"."));		
+			$con_lai = strrev(chop(chunk_split(strrev($c),3,"."),"."));	
+			$no_money = $this->no_money();	
 			//tinh tong so trang
 			// $numPage = ceil($total/$recordPerPage);//ham ceil de lay tran
 			//lay bien p truyen tu url -> bien nay the hien la dang o may
@@ -26,7 +27,7 @@
 			$money_output = $this->money_output();
 			$ghichu = $this->list_content();
 			$money_input = $this->money_input();
-			$this->renderHTML("views/frontend/home.php", array("con_lai"=>$con_lai,"money_output"=>$money_output,"total"=>$total,"ghichu"=>$ghichu,"money_input"=>$money_input,"total_input_money"=>$total_input_money));
+			$this->renderHTML("views/frontend/home.php", array("no_money"=>$no_money,"con_lai"=>$con_lai,"money_output"=>$money_output,"total"=>$total,"ghichu"=>$ghichu,"money_input"=>$money_input,"total_input_money"=>$total_input_money));
 		}
 
     }

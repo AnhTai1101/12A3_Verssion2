@@ -4,6 +4,7 @@
 	<title>Login V16</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="http://localhost/PHP43/Class12A3_v2/">
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="assets/backend/login/images/icons/favicon.ico"/>
 <!--===============================================================================================-->
