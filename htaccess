@@ -1,0 +1,6 @@
+# bat che do rewrite - Bật chế độ rewrite
+RewriteEngine On
+RewriteRule ^login$ info_admin.php
+#RewriteRule ^home/(.*)/(.*)$ index.php?area=$1&controller=$2
+DirectoryIndex index.php
+Options -Indexes

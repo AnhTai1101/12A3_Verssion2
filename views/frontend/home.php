@@ -228,31 +228,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
             </div>
             <div class="top-nav clearfix">
-    <!--search & user info start-->
-    <ul class="nav pull-right top-menu">
-        <li>
-            <input type="text" class="form-control search" placeholder=" Search">
-        </li>
-        <!-- user login dropdown start-->
-        <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <img alt="" src="assets/frontend/images/information.png">
-                <span class="username">Xin chào, Khách</span>
-                <b class="caret"></b>
-            </a>
-            <!-- <ul class="dropdown-menu extended logout">
-                <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
-            </ul> -->
-        </li>
-        <!-- user login dropdown end -->
-       
-    </ul>
-    <!--search & user info end-->
-</div>
+            <!--search & user info start-->
+            <ul class="nav pull-right top-menu">
+                <li>
+                    <input type="text" class="form-control search" placeholder=" Search">
+                </li>
+                <!-- user login dropdown start-->
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <img alt="" src="assets/frontend/images/information.png">
+                        <span class="username">Xin chào, Khách</span>
+                        <b class="caret"></b>
+                    </a>
+                    <!-- <ul class="dropdown-menu extended logout">
+                        <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                        <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                        <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                    </ul> -->
+                </li>
+                <!-- user login dropdown end -->
             
-            <!--logo end-->
+            </ul>
+            <!--search & user info end-->
+            <!-- </div> -->
+                
+                <!--logo end-->
         </header>
         <!--header end-->
         <!--sidebar start-->
@@ -348,7 +348,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </ul>
                         </li>
                         <li>
-                            <a href="login.html">
+                            <a href="index.php?area=backend&controller=login">
                                 <i class="fa fa-user"></i>
                                 <span>Login Page</span>
                             </a>
@@ -421,7 +421,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <!-- //market-->
                 <div class="agil-info-calendar">
                     <!-- calendar -->
-                    <div class="col-md-6 agile-calendar">
+                    <div class="col-md-8 agile-calendar">
                         <div class="calendar-widget">
                             <div class="panel-heading ui-sortable-handle">
                                 <span class="panel-icon"><i class="fa fa-calendar-o"></i></span>
@@ -444,7 +444,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                     </div>
                     <!-- //calendar -->
-                    <div class="col-md-6 w3agile-notifications">
+                    <div class="col-md-4 w3agile-notifications">
                         <div class="notifications">
                             <!--notification start-->
                             <header class="panel-heading">
@@ -549,7 +549,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!-- footer -->
             <div class="footer">
                 <div class="wthree-copyright">
-                    <p>© 2019 Visitors. All rights reserved | Design by Super Admin</p>
+                    <p>© 2019 Visitors. All rights reserved | Design by Super Admin Tài</p>
                 </div>
             </div>
             <!-- / footer -->
