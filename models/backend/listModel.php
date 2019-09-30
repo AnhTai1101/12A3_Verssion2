@@ -57,6 +57,7 @@
 		// 	$result = $query->fetchAll();
 		// 	return $result;
 		// }
+		// full danh sách
 		public function list_content(){
 			//lay bien ket noi csdl
 			$conn = Connection::getInstance();			
@@ -70,6 +71,7 @@
 			$result = $query->fetchAll();
 			return $result;
 		}
+		// thêm nội dung chi tiêu
 		public function Model_addContent(){
 			$content = isset($_POST['content']) ? $_POST['content'] : 0;
 			$content = ucfirst($content);
@@ -82,6 +84,7 @@
 			//thuc thi truy van
 			$query->execute(array("content"=>$content,"money"=>$money,"date"=>$date));
 		}
+		// số người đã nộp tiền
 		public function money_input(){
             $conn = Connection::getInstance();
             $query = $conn->prepare("select * from noptien where trangthai=1");
@@ -93,6 +96,58 @@
 			// chia cách cách hàng ngìn và triệu bằng dấu chậm.
 			$d = strrev(chop(chunk_split(strrev($d),3,"."),"."));
             return $d;
-        }
+		}
+		// số tiền chi ( đơn vị nghìn đồng)
+		// function return total money output don vi vnd
+		public function total_money_output(){
+			$conn = Connection::getInstance();
+            $query = $conn->prepare("select money from ghichu");
+            $query -> setFetchMode(PDO::FETCH_OBJ);
+            $query -> execute();
+			$result = $query->fetchAll();
+			// tinh tong so tien
+			//$d = $result*200000;
+			// chia cách cách hàng ngìn và triệu bằng dấu chậm.
+			//$d = strrev(chop(chunk_split(strrev($d),3,"."),"."));
+			
+			foreach($result as $d){
+				static $c = 0;
+				$c = $c + $d->money;
+				// $b = $d->money;
+				// $a = (int)$b;
+				// $c = $c + $a;
+			}
+			$c= $c*1000;
+			return $c;
+		}
+		// số tiền đã nộp vào ( đơn vị nghìn đồng)
+		public function total_money_input(){
+			$conn = Connection::getInstance();
+            $query = $conn->prepare("select * from noptien where trangthai=1");
+            $query -> setFetchMode(PDO::FETCH_OBJ);
+            $query -> execute();
+			$result = $query->rowCount();
+			// tinh tong so tien
+			$d = $result*200000;
+			return $d;
+		}
+		// model add money in list chi
+		public function add_ListMoney(){
+			$input = $this->total_money_input();
+			$output = $this->total_money_output();
+			$money = $input - $output;
+			$datet = getdate();
+			$mdate = $datet['mday'];
+			$mon = $datet['mon'];
+			$year = $datet['year'];
+			$date = "$year"."-"."$mon"."-"."$mdate";
+			//lay bien ket noi csdl
+			$conn = Connection::getInstance();
+			//chuan bi cau truy van
+			$query = $conn->prepare("insert into list_chi set money=:money ,date=:date");
+			//thuc thi truy van
+			$query->execute(array("money"=>$money,"date"=>$date));
+
+		}
     }
 ?>

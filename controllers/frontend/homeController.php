@@ -1,7 +1,10 @@
 <?php
-    include "models/frontend/listModel.php";
+	include "models/frontend/listModel.php";
+	include "models/frontend/list_moneyModel.php";
+	
     class homeController extends Controller{
-        use listModel;
+		use listModel;
+		use list_money;
         // lay so record trong trang
         public function index(){
 			//quy dinh so ban ghi tren mot trang
@@ -15,7 +18,10 @@
 			$b = $this->total_money_output();
 			$c = $a - $b;
 			$con_lai = strrev(chop(chunk_split(strrev($c),3,"."),"."));	
-			$no_money = $this->no_money();	
+			$no_money = $this->no_money();
+			$d = round(($c/$a)*100,2);
+			//$money_now = $this->money_now();
+			$listMoney = $this->moneyList();	
 			//tinh tong so trang
 			// $numPage = ceil($total/$recordPerPage);//ham ceil de lay tran
 			//lay bien p truyen tu url -> bien nay the hien la dang o may
@@ -27,8 +33,9 @@
 			$money_output = $this->money_output();
 			$ghichu = $this->list_content();
 			$money_input = $this->money_input();
-			$this->renderHTML("views/frontend/home.php", array("no_money"=>$no_money,"con_lai"=>$con_lai,"money_output"=>$money_output,"total"=>$total,"ghichu"=>$ghichu,"money_input"=>$money_input,"total_input_money"=>$total_input_money));
+			$this->renderHTML("views/frontend/home.php", array("listMoney"=>$listMoney,"money_now"=>$d,"no_money"=>$no_money,"con_lai"=>$con_lai,"money_output"=>$money_output,"total"=>$total,"ghichu"=>$ghichu,"money_input"=>$money_input,"total_input_money"=>$total_input_money));
 		}
 
-    }
+	}
+	
 ?>

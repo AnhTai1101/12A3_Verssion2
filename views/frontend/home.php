@@ -409,17 +409,147 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                             </div>
                             <div class="col-md-8 market-update-left">
-                                <h4>Còn lại</h4>
+                                <h4>Còn lại &nbsp;<?php echo $money_now; ?>%</h4>
                                 <h3><?php echo $con_lai; ?>đ</h3>
-                                <p>Số tiền quỹ lớp còn lại</p>
+                                <!-- <p>Số tiền quỹ lớp còn lại</p> -->
+                                <div class="progress progress-striped active ">
+                                    <div class="bar <?php echo $money_now >=30 ? "green" : "red"; ?>" style="width:<?php echo $money_now; ?>%;"></div>
+                                </div>
                             </div>
                             <div class="clearfix"> </div>
                         </div>
                     </div>
                     <div class="clearfix"> </div>
+                    </div>
+                    <!-- //market-->
+                    <div class="agile-last-grids">
+                        <!-- <div class="col-md-4 agile-last-left">
+                            <div class="agile-last-grid">
+                                <div class="area-grids-heading">
+                                    <h3>Monthly</h3>
+                                </div>
+                                <div id="graph7"></div>
+                                <script>
+                                    // This crosses a DST boundary in the UK.
+                                    Morris.Area({
+                                        element: 'graph7',
+                                        data: [{
+                                            x: '2013-03-30 22:00:00',
+                                            y: 3000,
+                                            z: 3000
+                                        }, {
+                                            x: '2013-03-31 00:00:00',
+                                            y: 2000,
+                                            z: 0
+                                        }, {
+                                            x: '2013-03-31 02:00:00',
+                                            y: 2000,
+                                            z: 2000
+                                        }, {
+                                            x: '2013-03-31 04:00:00',
+                                            y: 4000,
+                                            z: 4000
+                                        }],
+                                        xkey: 'x',
+                                        ykeys: ['y', 'z'],
+                                        labels: ['Chi', 'Thu']
+                                    });
+                                </script>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 agile-last-left agile-last-middle">
+                            <div class="agile-last-grid">
+                                <div class="area-grids-heading">
+                                    <h3>Daily</h3>
+                                </div>
+                                <div id="graph8"></div>
+                                <script>
+                                    /* data stolen from http://howmanyleft.co.uk/vehicle/jaguar_'e'_type */
+                                    var day_data = [{
+                                        "period": "2016-10-01",
+                                        "licensed": 3407,
+                                        "sorned": 660
+                                    }, {
+                                        "period": "2016-09-30",
+                                        "licensed": 3351,
+                                        "sorned": 629
+                                    }, {
+                                        "period": "2016-09-29",
+                                        "licensed": 3269,
+                                        "sorned": 618
+                                    }, {
+                                        "period": "2016-09-20",
+                                        "licensed": 3246,
+                                        "sorned": 661
+                                    }, {
+                                        "period": "2016-09-19",
+                                        "licensed": 3257,
+                                        "sorned": 667
+                                    }, {
+                                        "period": "2016-09-18",
+                                        "licensed": 3248,
+                                        "sorned": 627
+                                    }, {
+                                        "period": "2016-09-17",
+                                        "licensed": 3171,
+                                        "sorned": 660
+                                    }, {
+                                        "period": "2016-09-16",
+                                        "licensed": 3171,
+                                        "sorned": 676
+                                    }, {
+                                        "period": "2016-09-15",
+                                        "licensed": 3201,
+                                        "sorned": 656
+                                    }, {
+                                        "period": "2016-09-10",
+                                        "licensed": 3215,
+                                        "sorned": 622
+                                    }];
+                                    Morris.Bar({
+                                        element: 'graph8',
+                                        data: day_data,
+                                        xkey: 'period',
+                                        ykeys: ['licensed', 'sorned'],
+                                        labels: ['Tổng thu', 'Còn'],
+                                        xLabelAngle: 60
+                                    });
+                                </script>
+                            </div>
+                        </div> -->
+                    <div class="col-md-12 agile-last-left agile-last-right">
+                        <div class="agile-last-grid">
+                            <div class="area-grids-heading">
+                                <h3>Tiền còn trong kho</h3>
+                            </div>
+							<div id="graph9"></div>
+                            <script>
+                                var day_data = [{
+                                    "elapsed": "01-01-2019",
+                                    "value": 00000
+								}<?php foreach($listMoney as $nows): ?>,{
+                                    "elapsed": "<?php echo date("d-m-Y", strtotime($nows->date)); ?>",
+                                    "value": <?php echo $nows->money; ?>
+                                }
+                            <?php endforeach; ?>
+                                ];
+                                Morris.Line({
+                                    element: 'graph9',
+                                    data: day_data,
+                                    xkey: 'elapsed',
+                                    ykeys: ['value'],
+                                    labels: ['Còn'],
+                                    parseTime: false
+                                });
+                            </script>
+
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
                 </div>
-                <!-- //market-->
-                <div class="agil-info-calendar">
+                    <div class="agil-info-calendar">
+                    
                     <!-- calendar -->
                     <div class="col-md-8 agile-calendar">
                         <div class="calendar-widget">
@@ -443,6 +573,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>
                         </div>
                     </div>
+                    
                     <!-- //calendar -->
                     <div class="col-md-4 w3agile-notifications">
                         <div class="notifications">
@@ -524,6 +655,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                    
                     <div class="clearfix"> </div>
                 </div>
+                
             </section>
             <!-- footer -->
             <div class="footer">

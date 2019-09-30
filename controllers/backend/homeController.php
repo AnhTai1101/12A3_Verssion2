@@ -15,6 +15,7 @@
         public function delete_money(){
             $this->delete();
             $data = $this->list_money();
+            $this->add_ListMoney();
             $this->renderHTML("views/backend/list.php",array("data"=>$data));
             header("location:index.php?area=backend&controller=home");
         }
@@ -22,6 +23,7 @@
         public function add_money(){
             $this->add();
             $data = $this->list_money();
+            $this->add_ListMoney();
             $this->renderHTML("views/backend/list.php",array("data"=>$data));
             header("location:index.php?area=backend&controller=home");
         }
@@ -54,7 +56,9 @@
 		}
         public function add_content(){
             $this->Model_addContent();
+            $this->add_ListMoney();
             header("location:index.php?area=backend&controller=home");
         }
+
     }
 ?>
