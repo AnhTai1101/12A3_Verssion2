@@ -4,7 +4,7 @@
         use loginModel;
         public function index(){
 			//hien thi view
-			$this->renderHTML("views/backend/login.php");
+			$this->renderHTML("views/frontend/login.php");
 		}
 		public function login(){
 			//goi ham model_login

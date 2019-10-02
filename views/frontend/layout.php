@@ -15,6 +15,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             window.scrollTo(0, 1);
         }
     </script>
+    <base href="https://mobibbz.000webhostapp.com/">
     <!-- bootstrap-css -->
     <link rel="stylesheet" href="assets/frontend/css/bootstrap.min.css">
     <!-- //bootstrap-css -->

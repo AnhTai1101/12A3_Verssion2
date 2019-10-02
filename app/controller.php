@@ -24,7 +24,7 @@
             if($_SESSION['account'] == NULL){
                 // neu khong co nghia la chua dang nhap
                 // t chuyen huong ve login
-                header("location:index.php?area=backend&controller=login");
+                header("location:login");
             }
         }
     }

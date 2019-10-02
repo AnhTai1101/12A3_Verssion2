@@ -44,7 +44,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <header class="header fixed-top clearfix">
             <!--logo start-->
             <div style="width: 340px;" class="brand">
-                <a href="index.html" class="logo">Demo</a>
+                <a href="index.php?area=backend&controller=login" class="logo">Demo</a>
                 <div style="float: left;" class="nav notify-row" id="top_menu">
                     <!--  notification start -->
                     <ul class="nav top-menu">
@@ -231,7 +231,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!--search & user info start-->
             <ul class="nav pull-right top-menu">
                 <li>
-                    <input type="text" class="form-control search" placeholder=" Search">
+                    <!-- <input type="text" class="form-control search" placeholder=" Search"> -->
                 </li>
                 <!-- user login dropdown start-->
                 <li class="dropdown">
@@ -262,25 +262,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="leftside-navigation">
                     <ul class="sidebar-menu" id="nav-accordion">
                         <li>
-                            <a class="active" href="assets/frontend/index.html">
+                            <a class="active" href="backend">
                                 <i class="fa fa-dashboard"></i>
                                 <span>Trang chủ</span>
                             </a>
                         </li>
 
-                        <li class="sub-menu">
+                        <!-- <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
                                 <span>Null</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="typography.html">Loading...</a></li>
-                                <li><a href="glyphicon.html">Loading...</a></li>
-                                <li><a href="grids.html">Loading...</a></li>
+                                <li><a href="#">Loading...</a></li>
+                                <li><a href="#">Loading...</a></li>
+                                <li><a href="#">Loading...</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="fontawesome.html">
+                            <a href="#">
                                 <i class="fa fa-bullhorn"></i>
                                 <span>Loading...</span>
                             </a>
@@ -291,8 +291,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Loading...</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="basic_table.html">Loading...</a></li>
-                                <li><a href="responsive_table.html">Loading...</a></li>
+                                <li><a href="#">Loading...</a></li>
+                                <li><a href="#">Loading...</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -301,9 +301,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Loading...</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="form_component.html">Loading...</a></li>
-                                <li><a href="form_validation.html">Loading...</a></li>
-                                <li><a href="dropzone.html">Dropzone</a></li>
+                                <li><a href="#">Loading...</a></li>
+                                <li><a href="#">Loading...</a></li>
+                                <li><a href="#">Dropzone</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -312,8 +312,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Loading... </span>
                             </a>
                             <ul class="sub">
-                                <li><a href="mail.html">Loading...</a></li>
-                                <li><a href="mail_compose.html">Loading...</a></li>
+                                <li><a href="#">Loading...</a></li>
+                                <li><a href="#">Loading...</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -322,8 +322,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Loading...</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="chartjs.html">Loading...</a></li>
-                                <li><a href="flot_chart.html">Loading...</a></li>
+                                <li><a href="#">Loading...</a></li>
+                                <li><a href="#">Loading...</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -332,8 +332,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Loading...</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="google_map.html">Loading...</a></li>
-                                <li><a href="vector_map.html">VLoading...</a></li>
+                                <li><a href="#">Loading...</a></li>
+                                <li><a href="#">VLoading...</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -342,13 +342,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Loading...</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="gallery.html">Loading...</a></li>
-                                <li><a href="404.html">Loading...</a></li>
-                                <li><a href="registration.html">Loading...</a></li>
+                                <li><a href="#">Loading...</a></li>
+                                <li><a href="#">Loading...</a></li>
+                                <li><a href="#">Loading...</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li>
-                            <a href="index.php?area=backend&controller=login">
+                            <a href="login">
                                 <i class="fa fa-user"></i>
                                 <span>Login Page</span>
                             </a>
@@ -423,131 +423,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                     <!-- //market-->
                     <div class="agile-last-grids">
-                        <!-- <div class="col-md-4 agile-last-left">
+                        <div class="col-md-12 agile-last-left agile-last-right">
                             <div class="agile-last-grid">
                                 <div class="area-grids-heading">
-                                    <h3>Monthly</h3>
+                                    <h3>Tiền còn trong kho</h3>
                                 </div>
-                                <div id="graph7"></div>
+                                <div id="graph9"></div>
                                 <script>
-                                    // This crosses a DST boundary in the UK.
-                                    Morris.Area({
-                                        element: 'graph7',
-                                        data: [{
-                                            x: '2013-03-30 22:00:00',
-                                            y: 3000,
-                                            z: 3000
-                                        }, {
-                                            x: '2013-03-31 00:00:00',
-                                            y: 2000,
-                                            z: 0
-                                        }, {
-                                            x: '2013-03-31 02:00:00',
-                                            y: 2000,
-                                            z: 2000
-                                        }, {
-                                            x: '2013-03-31 04:00:00',
-                                            y: 4000,
-                                            z: 4000
-                                        }],
-                                        xkey: 'x',
-                                        ykeys: ['y', 'z'],
-                                        labels: ['Chi', 'Thu']
-                                    });
-                                </script>
-
-                            </div>
-                        </div>
-                        <div class="col-md-4 agile-last-left agile-last-middle">
-                            <div class="agile-last-grid">
-                                <div class="area-grids-heading">
-                                    <h3>Daily</h3>
-                                </div>
-                                <div id="graph8"></div>
-                                <script>
-                                    /* data stolen from http://howmanyleft.co.uk/vehicle/jaguar_'e'_type */
                                     var day_data = [{
-                                        "period": "2016-10-01",
-                                        "licensed": 3407,
-                                        "sorned": 660
-                                    }, {
-                                        "period": "2016-09-30",
-                                        "licensed": 3351,
-                                        "sorned": 629
-                                    }, {
-                                        "period": "2016-09-29",
-                                        "licensed": 3269,
-                                        "sorned": 618
-                                    }, {
-                                        "period": "2016-09-20",
-                                        "licensed": 3246,
-                                        "sorned": 661
-                                    }, {
-                                        "period": "2016-09-19",
-                                        "licensed": 3257,
-                                        "sorned": 667
-                                    }, {
-                                        "period": "2016-09-18",
-                                        "licensed": 3248,
-                                        "sorned": 627
-                                    }, {
-                                        "period": "2016-09-17",
-                                        "licensed": 3171,
-                                        "sorned": 660
-                                    }, {
-                                        "period": "2016-09-16",
-                                        "licensed": 3171,
-                                        "sorned": 676
-                                    }, {
-                                        "period": "2016-09-15",
-                                        "licensed": 3201,
-                                        "sorned": 656
-                                    }, {
-                                        "period": "2016-09-10",
-                                        "licensed": 3215,
-                                        "sorned": 622
-                                    }];
-                                    Morris.Bar({
-                                        element: 'graph8',
+                                        "elapsed": "01-01-2019",
+                                        "value": 4500000
+                                    }<?php foreach($listMoney as $nows): ?>,{
+                                        "elapsed": "<?php echo date("d-m-Y", strtotime($nows->date)); ?>",
+                                        "value": <?php echo $nows->money; ?>
+                                    }
+                                    <?php endforeach; ?>
+                                    ];
+                                    Morris.Line({
+                                        element: 'graph9',
                                         data: day_data,
-                                        xkey: 'period',
-                                        ykeys: ['licensed', 'sorned'],
-                                        labels: ['Tổng thu', 'Còn'],
-                                        xLabelAngle: 60
+                                        xkey: 'elapsed',
+                                        ykeys: ['value'],
+                                        labels: ['Còn'],
+                                        parseTime: false
                                     });
                                 </script>
                             </div>
-                        </div> -->
-                    <div class="col-md-12 agile-last-left agile-last-right">
-                        <div class="agile-last-grid">
-                            <div class="area-grids-heading">
-                                <h3>Tiền còn trong kho</h3>
-                            </div>
-							<div id="graph9"></div>
-                            <script>
-                                var day_data = [{
-                                    "elapsed": "01-01-2019",
-                                    "value": 00000
-								}<?php foreach($listMoney as $nows): ?>,{
-                                    "elapsed": "<?php echo date("d-m-Y", strtotime($nows->date)); ?>",
-                                    "value": <?php echo $nows->money; ?>
-                                }
-                            <?php endforeach; ?>
-                                ];
-                                Morris.Line({
-                                    element: 'graph9',
-                                    data: day_data,
-                                    xkey: 'elapsed',
-                                    ykeys: ['value'],
-                                    labels: ['Còn'],
-                                    parseTime: false
-                                });
-                            </script>
-
                         </div>
+                        <div class="clearfix"> </div>
                     </div>
-                    <div class="clearfix"> </div>
-                </div>
                     <div class="agil-info-calendar">
                     
                     <!-- calendar -->
