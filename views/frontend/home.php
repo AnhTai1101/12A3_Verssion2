@@ -32,14 +32,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- calendar -->
     <link rel="stylesheet" href="assets/frontend/css/monthly.css">
     <!-- //calendar -->
+    <!-- calendar2 -->
+    <link rel="stylesheet" href="assets/frontend/css/calendar.css">
+    <!-- calendar2 -->
     <!-- //font-awesome icons -->
     <script src="assets/frontend/js/jquery2.0.3.min.js"></script>
     <script src="assets/frontend/js/raphael-min.js"></script>
     <script src="assets/frontend/js/morris.js"></script>
+    <script>
+        function load(){
+            $.get('index.php',function(data){
+                $('#name').css('display','block');
+                $('#name').html(data);
+                $('#result').attr('onclick','unload()');
+
+            });
+        }
+        function unload(){
+            $('#name').css('display','none');
+            $('#result').attr('onclick','load()')
+        }
+    </script>
 </head>
 
-<body>
+<body> 
+    
     <section id="container">
+        
         <!--header start-->
         <header class="header fixed-top clearfix">
             <!--logo start-->
@@ -245,6 +264,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
                         <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
                     </ul> -->
+                    
                 </li>
                 <!-- user login dropdown end -->
             
@@ -267,6 +287,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Trang chủ</span>
                             </a>
                         </li>
+                        
+                            
+                        
 
                         <!-- <li class="sub-menu">
                             <a href="javascript:;">
@@ -455,28 +478,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="agil-info-calendar">
                     
                     <!-- calendar -->
-                    <div class="col-md-8 agile-calendar">
-                        <div class="calendar-widget">
-                            <div class="panel-heading ui-sortable-handle">
-                                <span class="panel-icon"><i class="fa fa-calendar-o"></i></span>
-                                <span class="panel-title"> Calendar Widget</span>
+                        <div class="col-md-8 agile-calendar ">
+                        <div class='calendar'>
+                            <div class='day'></div>
+                            <div class='month'>
+                                <div class='month-name'></div>
                             </div>
-                            <!-- grids -->
-                            <div class="agile-calendar-grid">
-                                <div class="page">
-
-                                    <div class="w3l-calendar-left">
-                                        <div class="calendar-heading">
-
-                                        </div>
-                                        <div class="monthly" id="mycalendar"></div>
-                                    </div>
-
-                                    <div class="clearfix"> </div>
-                                </div>
+                            <div class='number'></div>
                             </div>
+                            <div class='contain'>
+                            <div class='caltwo'>
+                                <div class='daytwo'></div>
+                                <div class='monthtwo'></div>
+                                <div class='numtwo'></div>
+                            </div>
+                            <div class='clock'>
+                                <div class='hour time'></div>
+                                <div class='min time'></div>
+                                <div class='sec time'></div>
+                            </div>
+                            </div>
+                            <div class='meter'>
+                            <div class='hours timer'></div>
+                            <div class='minutes timer'></div>
+                            <div class='seconds timer'></div>
                         </div>
-                    </div>
+                        </div>
+
                     
                     <!-- //calendar -->
                     <div class="col-md-4 w3agile-notifications">
@@ -532,6 +560,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </tr>
                                     <?php $z++; ?>
                                     <?php endforeach; ?>
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -555,7 +584,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                        <!-- <div id="name">
+                            
+                            </div>
+                            <button id="result" class="btn btn-compose" value="Click" onclick="load()" >Click</button>
+                    </div> -->
                    
                     <div class="clearfix"> </div>
                 </div>
@@ -568,9 +601,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
             </div>
             <!-- / footer -->
+            
         </section>
         <!--main content end-->
     </section>
+    
     <script src="assets/frontend/js/bootstrap.js"></script>
     <script src="assets/frontend/js/jquery.dcjqaccordion.2.7.js"></script>
     <script src="assets/frontend/js/scripts.js"></script>
@@ -581,6 +616,56 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- morris JavaScript -->
     <script>
         $(document).ready(function() {
+        // calendar
+            var weekdays=["Chủ nhật","Thứ hai","Thứ 3","Thứ 4","Thứ 5","Thứ 6","Thứ 7"];
+            var months=["Tháng Giêng","Tháng 2","Tháng 3","Tháng 4","Tháng 5","Tháng 6","Tháng 7","Tháng 8","Tháng 9","Tháng 10","Tháng 11","Tháng 12"];
+            setInterval(function(){
+                var d=new Date();
+                var day=d.getDay();
+                var day_name=weekdays[day];
+                var num=d.getDate();
+                var mo=d.getMonth();
+                var name=months[mo];
+                $(".month-name").html(name.substring());// VD name.substring(0,3) cắt chuối lấy 3 ký tự đầu tiên
+                $(".number").html(num);
+                //$(".day").html(day_name);
+                $(".monthtwo").html("Ngày-"+num+"<br>"+name);
+                $(".daytwo").html(day_name);
+                var minute=d.getMinutes();
+                var hour=d.getHours();
+                var sec=d.getSeconds();
+                var secMinMeter=300/60;
+                $(".hours").css("width",hour*12.5+"px");
+                if(hour<10){
+                    $(".hour").html("0"+hour+":")
+                }
+                else if(hour>12){
+                    hour=hour-12;
+                    if(hour<10){
+                        $(".hour").html("0"+hour+":");
+                    }
+                }
+                else{
+                    $(".hour").html(hour+":");
+                }
+                if(minute<10){
+                    $(".min").html("0"+minute+":");
+                    $(".minutes").css("width",minute*5+"px");
+                }
+                else{
+                    $(".min").html(minute+":");
+                    $(".minutes").css("width",minute*5+"px");
+                }
+                if(sec<10){
+                    $(".sec").html("0"+sec);
+                    $(".seconds").css("width",sec*5+"px");
+                }
+                else{
+                    $(".sec").html(sec);
+                    $(".seconds").css("width",sec*5+"px");
+                }
+            },1000)
+            // end calendar
             //BOX BUTTON SHOW AND CLOSE
             jQuery('.small-graph-box').hover(function() {
                 jQuery(this).find('.box-button').fadeIn('fast');
@@ -702,6 +787,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         });
     </script>
     <!-- //calendar -->
+    <!-- <div id="name">
+        
+        </div>
+        <button id="result" class="btn btn-compose" value="Click" onclick="load()" >Click</button>
+    </div> -->
 </body>
 
 </html>
